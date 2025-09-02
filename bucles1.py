@@ -17,15 +17,16 @@ if numero1 > numero2:
 else:
     mayor = numero2
     menor = numero1
-'''
+'''     
 while menor <= mayor:
     if menor % 2 == 0:
         print(menor)
     menor += 1
-'''
+'''     
+#Otra forma de hacerlo
 if menor % 2 == 1:
     menor += 1
 while menor <= mayor:
     print(menor)
     menor += 2
-    
+
