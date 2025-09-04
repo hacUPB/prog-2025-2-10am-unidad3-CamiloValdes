@@ -1,7 +1,6 @@
 # Primera idea 
-En el mantenimiento aeronáutico, los manuales se organizan según el estándar ATA 100, que clasifica los sistemas de la aeronave en capítulos numerados.
-El programa debe permitir al usuario ingresar el número de un capítulo ATA y mostrar el sistema correspondiente. Por ejemplo, ATA 21 = Aire Acondicionado, ATA 27 = Mandos de vuelo, ATA 32 = Tren de aterrizaje, etc.
-
+En el mantenimiento aeronáutico, los manuales se organizan según el ATA 100, que clasifica los sistemas de la aeronave en capítulos numerados.
+El programa debe permitir al usuario ingresar el número de un capítulo ATA y mostrar el sistema correspondiente.
 El usuario podrá realizar consultas múltiples dentro de esta opción, hasta que decida salir digitando un número especial (por ejemplo, 0).
 De esta manera, el programa ayudará al estudiante a familiarizarse con la clasificación ATA y la importancia de cada sistema en el avión.
 
