@@ -1,1 +1,33 @@
+# Primera idea 
+En el mantenimiento aeronáutico, los manuales se organizan según el estándar ATA 100, que clasifica los sistemas de la aeronave en capítulos numerados.
+El programa debe permitir al usuario ingresar el número de un capítulo ATA y mostrar el sistema correspondiente. Por ejemplo, ATA 21 = Aire Acondicionado, ATA 27 = Mandos de vuelo, ATA 32 = Tren de aterrizaje, etc.
 
+El usuario podrá realizar consultas múltiples dentro de esta opción, hasta que decida salir digitando un número especial (por ejemplo, 0).
+De esta manera, el programa ayudará al estudiante a familiarizarse con la clasificación ATA y la importancia de cada sistema en el avión.
+
+# Segunda idea 
+Un avión entra en pérdida (stall) cuando su velocidad es tan baja que las alas ya no generan suficiente sustentación para contrarrestar el peso.
+El programa pedirá al usuario ingresar los datos del avión:
+
+Peso total de la aeronave, Superficie alar, coeficiente de sustentación máximo, densidad del aire.
+
+Luego calculará la velocidad de pérdida con la fórmula correspondiente.
+El usuario también ingresará una velocidad real de vuelo, y el programa determinará:
+Si la velocidad es mayor que la de pérdida, el avión está en condiciones seguras.
+Si es igual o menor, el avión entraría en pérdida.
+El programa repetirá el proceso en un ciclo hasta que el usuario decida salir.
+
+# Tercera idea La sustentación es la fuerza aerodinámica que permite que un avión se mantenga en vuelo.
+El programa solicitará al usuario los siguientes datos:
+
+Velocidad de vuelo.
+
+Altitud (para calcular una densidad del aire aproximada).
+
+Superficie alar, coeficiente de sustentación, peso total de la aeronave.
+
+Con estos datos, calculsará la fuerza de sustentación. Luego comparará este valor con el peso del avión y mostrará el estado de vuelo:
+Si la sustentación es mayor que el peso, el avión asciende.
+Si la sustentación es igual al peso, el avión se mantiene en vuelo recto y nivelado.
+Si la sustentación es menor que el peso, el avión desciende.
+El usuario podrá repetir el cálculo varias veces, probando diferentes condiciones de vuelo, hasta que decida salir.
