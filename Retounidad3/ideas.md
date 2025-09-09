@@ -16,6 +16,19 @@ Si la velocidad es mayor que la de pérdida, el avión está en condiciones segu
 Si es igual o menor, el avión entraría en pérdida.
 El programa repetirá el proceso en un ciclo hasta que el usuario decida salir.
 
+| Variable   | Tipo de variable | Comentario                                                                    |
+| ---------- | ---------------- | ----------------------------------------------------------------------------- |
+| `W`        | Entrada          | Peso total del avión ingresado por el usuario (en Newtons o kg).              |
+| `S`        | Entrada          | Superficie alar ingresada por el usuario (en m²).                             |
+| `CLmax`    | Entrada          | Coeficiente máximo de sustentación, ingresado por el usuario.                 |
+| `rho`      | Entrada          | Densidad del aire, ingresada por el usuario (en kg/m³).                       |
+| `V_stall`  | Cálculo/Salida   | Velocidad de pérdida calculada con la fórmula.                                |
+| `V_actual` | Entrada          | Velocidad actual del avión, pedida al usuario en cada iteración.              |
+| `opcion`   | Condicional      | Variable que controla si el usuario desea continuar o terminar la simulación. |
+| `estado`   | Salida           | Mensaje que indica si el avión vuela seguro o entra en pérdida.               |
+| `i`        | Control de bucle | Contador opcional para las iteraciones (ej. segundos de simulación).          |
+
+
 # Tercera idea La sustentación es la fuerza aerodinámica que permite que un avión se mantenga en vuelo.
 El programa solicitará al usuario los siguientes datos:
 
