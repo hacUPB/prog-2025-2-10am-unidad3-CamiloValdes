@@ -1,0 +1,140 @@
+# Primera idea 
+En el mantenimiento aeronáutico, los manuales se organizan según el ATA 100, que clasifica los sistemas de la aeronave en capítulos numerados.
+El programa debe permitir al usuario ingresar el número de un capítulo ATA y mostrar el sistema correspondiente.
+El usuario podrá realizar consultas múltiples dentro de esta opción, hasta que decida salir digitando un número especial (por ejemplo, 0).
+De esta manera, el programa ayudará al estudiante a familiarizarse con la clasificación ATA y la importancia de cada sistema en el avión.
+
+# Simulación de la velocidad de perdida
+El programa simulará el vuelo de una aeronave en el cual verificará en cada instante se la aeronave se encentra en condiciones seguras o si está entrando en perdida.
+El  usuario debe ingresar los parametros basicos de la aeronave: Peso total, superficie alar, coeficiente de sustentación máximo y la densidad del aire por la que se este volando.
+El programa calcula la velocidad minima de perdida de la aeronave
+Despues se inicia una simulacion paso por paso (cada segundo de vuelo) en cada intervalo se pedira la velocidad actual de la aeronave y el programa la comparará con la velocidad de pérdida. Si la velocidad es mayor al stall speed, el avion está volando de forma segura pero si es igual o menor la aeronave entra en perdida y se debe de mostrar el siguiente mensaje "PRECAUCIÓN VELOCIDAD DE PERDIDA, AUMENTAR LA VELOCIDAD"
+La simulacion se debe repetir hasta que el usuario lo determine 
+Nota: Si se da el caso de perdida, el programa debe poder volver a hacer el proceso para confirmar que ya no hay velocidad de perdida, NO debe terminar si hay caso de perdida.
+
+
+| Variable    | Tipo de variable | Comentario                                                                     |
+| ----------- | ---------------- | ------------------------------------------------------------------------------ |
+| W         | Entrada          | Peso total del avión ingresado por el usuario (en Newtons o kg).               |
+| S         | Entrada          | Superficie alar ingresada por el usuario (en m²).                              |
+| Cl   | Entrada          | Coeficiente máximo de sustentación, ingresado por el usuario.                  |
+| D     | Entrada          | Densidad del aire, ingresada por el usuario (en kg/m³).                        |
+| V_stall   | Cálculo/Salida   | Velocidad de pérdida calculada con la fórmula.                                 |
+| V_actual | Entrada          | Velocidad actual del avión, pedida al usuario en cada iteración.               |
+| estado    | Salida           | Mensaje que indica si el avión vuela seguro o entra en pérdida.                |
+| contador        | Control de bucle | Contador de las iteraciones (ej. segundos de simulación).                      |
+
+
+```
+Inicio
+    contador = 0
+    Mientras contador < 10 :
+          Escribir "Ingrese el peso:"
+            leer W
+          Escribir "Ingrese la superficie alar:"
+            leer S
+          Escribir "Ingrese el Coeficiente de sustentacion:"
+            leer Cl
+          Escribir "Ingrese la densidad del aire:"
+            leer D
+          V_stall = sqrt( (2*W) / (D*S*Cl))
+          Lista[contador] = V_stall
+          contador = contador + 1
+            Escribir "Ingrese 0 si desea salir ó ingrese el valor de la velocidad para continuar"
+            Escribir "Ingrese el valor de velocidad"
+            leer V_actual
+            Si V_actual == 0 entonces
+              Escribir "Saliendo"
+              Fin bucle
+            Sino
+              Si V_actual > V_stall entonces
+                Escribir " Seguro: el avión está por encima de la velocidad de pérdida."
+              Sino
+                Escribir "PRECAUCIÓN VELOCIDAD DE PERDIDA, AUMENTAR LA VELOCIDAD"
+              Fin Si
+            Fin Si
+    Fin Mientras
+    Desde contador = 0 hasta contador = 10
+         Escribir "valores registrados:"
+         Escribir Lista[contador]
+    Fin Desde
+Fin
+
+Función calcular_stall(W, S, CLmax, rho):
+    devolver sqrt( (2*W) / (rho*S*CLmax) )
+```
+#Pedimos a la IA la base para el codigo sin, embargo este no es el codigo que nos dio la IA
+
+
+
+
+
+
+
+# Simulación de Altitud y Potencia de Motor durante Ascenso
+Cuando un avión asciende, la densidad del aire disminuye y, por tanto, la potencia disponible del motor también se reduce. Esto afecta directamente la capacidad del avión para seguir ganando altitud.
+El reto será simular 10 segundos de ascenso en los que el usuario decide si aumentar, mantener o disminuir la potencia del motor, y observar cómo cambia la altitud alcanzada.
+
+
+
+| Variable   | Tipo de variable | Comentario                                                                 |
+| ---------- | ---------------- | -------------------------------------------------------------------------- |
+| t        | Control de bucle | Contador de segundos de la simulación (1 a 10).                            |
+| altitud  | Cálculo/Salida   | Altitud alcanzada en cada segundo (m).                                     |
+| potencia | Entrada          | Potencia actual del motor (%), definida y ajustada por el usuario.         |
+| densidad | Cálculo          | Densidad del aire según altitud, usando fórmula simplificada.              |
+| roc      | Cálculo          | Tasa de ascenso (m/s), calculada según la potencia y densidad.             |
+| decision | Entrada          | Elección del usuario: aumentar, mantener o disminuir potencia.             |
+| estado   | Condicional      | Indica si el avión sigue ascendiendo bien o si se estanca (poca potencia). |
+
+
+```
+Inicio
+
+  Escribir "Simulación de ascenso del avión por 10 segundos"
+
+  Leer potencia_inicial
+  altitud = 0
+  potencia = potencia_inicial
+
+  Para t desde 1 hasta 10 hacer
+      Escribir "Segundo ", t
+      Escribir "Potencia actual: ", potencia, "%"
+      Escribir "Altitud actual: ", altitud, "m"
+
+      Calcular densidad = 1.225 * exp(-altitud/10000)
+
+      Llamar a función calcular_ROC(potencia, densidad)
+      Guardar resultado en roc
+
+      altitud = altitud + roc
+
+      Escribir "Nueva altitud: ", altitud
+
+      Si roc < 1 entonces
+          Mostrar "¡Advertencia! El avión no asciende lo suficiente."
+      Fin Si
+
+      Escribir "¿Desea cambiar la potencia?"
+      Escribir "1. Aumentar potencia"
+      Escribir "2. Mantener potencia"
+      Escribir "3. Disminuir potencia"
+      Leer decision
+
+      Si decision == 1 entonces
+          potencia = potencia + 10
+      Sino si decision == 3 entonces
+          potencia = potencia - 10
+      Fin Si
+
+  Fin Para
+
+  Escribir "Simulación terminada. Altitud final: ", altitud, "m"
+
+Fin
+
+Función calcular_ROC(potencia, densidad):
+    devolver (potencia * densidad) / 100
+
+```
+#Uso de IA aplicado
