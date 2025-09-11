@@ -28,7 +28,7 @@ Nota: Si se da el caso de perdida, el programa debe poder volver a hacer el proc
 ```
 Inicio
 
-  Mostrar "Simulación de velocidad de pérdida (Stall Speed)"
+  Escribir "Simulación de velocidad de pérdida (Stall Speed)"
 
   Leer W
   Leer S
@@ -38,22 +38,22 @@ Inicio
   Llamar a función calcular_stall(W, S, CLmax, rho)
   Guardar resultado en V_stall
 
-  Mostrar "La velocidad de pérdida calculada es:", V_stall
+  Escribir "La velocidad de pérdida calculada es:", V_stall
 
   Inicializar i = 1
 
   Mientras (verdadero)
-      Mostrar "Iteración", i
+      Escribir "Iteración", i
       Leer V_actual
 
       Si V_actual == 0 entonces
-          Mostrar "Simulación terminada por el usuario"
+          Escribir "Simulación terminada por el usuario"
           Salir del bucle
 
       Si V_actual > V_stall entonces
-          Mostrar " Seguro: el avión está por encima de la velocidad de pérdida."
+          Escribir " Seguro: el avión está por encima de la velocidad de pérdida."
       Sino
-          Mostrar "PRECAUCIÓN VELOCIDAD DE PERDIDA, AUMENTAR LA VELOCIDAD"
+          Escribir "PRECAUCIÓN VELOCIDAD DE PERDIDA, AUMENTAR LA VELOCIDAD"
       Fin Si
 
       Incrementar i = i + 1
@@ -92,18 +92,18 @@ El reto será simular 10 segundos de ascenso en los que el usuario decide si aum
 ```
 Inicio
 
-  Mostrar "Simulación de ascenso del avión por 10 segundos"
+  Escribir "Simulación de ascenso del avión por 10 segundos"
 
   Leer potencia_inicial
   altitud = 0
   potencia = potencia_inicial
 
   Para t desde 1 hasta 10 hacer
-      Mostrar "Segundo ", t
-      Mostrar "Potencia actual: ", potencia, "%"
-      Mostrar "Altitud actual: ", altitud, "m"
+      Escribir "Segundo ", t
+      Escribir "Potencia actual: ", potencia, "%"
+      Escribir "Altitud actual: ", altitud, "m"
 
-      Calcular densidad = 1.225 * exp(-altitud/10000)
+      Calcular_densidad = 1.225 * exp(-altitud/10000)
 
       Llamar a función calcular_ROC(potencia, densidad)
       Guardar resultado en roc
@@ -116,10 +116,10 @@ Inicio
           Mostrar "¡Advertencia! El avión casi no asciende."
       Fin Si
 
-      Mostrar "¿Desea cambiar la potencia?"
-      Mostrar "1. Aumentar potencia"
-      Mostrar "2. Mantener potencia"
-      Mostrar "3. Disminuir potencia"
+      Escribir "¿Desea cambiar la potencia?"
+      Escribir "1. Aumentar potencia"
+      Escribir "2. Mantener potencia"
+      Escribir "3. Disminuir potencia"
       Leer decision
 
       Si decision == 1 entonces
