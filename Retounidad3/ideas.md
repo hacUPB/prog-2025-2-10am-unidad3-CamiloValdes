@@ -5,7 +5,7 @@ El usuario podrá realizar consultas múltiples dentro de esta opción, hasta qu
 De esta manera, el programa ayudará al estudiante a familiarizarse con la clasificación ATA y la importancia de cada sistema en el avión.
 
 # Simulación de la velocidad de perdida
-El programa simulará el vuelo de una aeronave en el cual verificará en cada instante se la aeronave se encentra en condiciones seguras o si está entrando en perdida.
+El programa simulará el vuelo de una aeronave en el cual verificará en cada instante si la aeronave se encentra en condiciones seguras o si está entrando en perdida.
 El  usuario debe ingresar los parametros basicos de la aeronave: Peso total, superficie alar, coeficiente de sustentación máximo y la densidad del aire por la que se este volando.
 El programa calcula la velocidad minima de perdida de la aeronave
 Despues se inicia una simulacion paso por paso (cada segundo de vuelo) en cada intervalo se pedira la velocidad actual de la aeronave y el programa la comparará con la velocidad de pérdida. Si la velocidad es mayor al stall speed, el avion está volando de forma segura pero si es igual o menor la aeronave entra en perdida y se debe de mostrar el siguiente mensaje "PRECAUCIÓN VELOCIDAD DE PERDIDA, AUMENTAR LA VELOCIDAD"
@@ -35,7 +35,7 @@ Inicio
   Leer CLmax
   Leer rho
 
-  Llamar a función calcular_stall(W, S, CLmax, rho)
+  Llamar a función calcular_stall(W, S, CLmax, rho)   
   Guardar resultado en V_stall
 
   Escribir "La velocidad de pérdida calculada es:", V_stall
@@ -63,6 +63,7 @@ Fin
 
 Función calcular_stall(W, S, CLmax, rho):
     devolver sqrt( (2*W) / (rho*S*CLmax) )
+
 ```
 
 
@@ -73,8 +74,7 @@ Función calcular_stall(W, S, CLmax, rho):
 
 
 # Simulación de Altitud y Potencia de Motor durante Ascenso
-Cuando un avión asciende, la densidad del aire disminuye y, por tanto, la potencia disponible del motor también se reduce. Esto afecta directamente la capacidad del avión para seguir ganando altitud.
-El reto será simular 10 segundos de ascenso en los que el usuario decide si aumentar, mantener o disminuir la potencia del motor, y observar cómo cambia la altitud alcanzada.
+Cuando un avión asciende, la densidad del aire disminuye y, por tanto, la potencia disponible del motor también se reduce. Esto afecta directamente la capacidad del avión para seguir ganando altitud.  simular 10 segundos de ascenso en los que el usuario decide si aumentar, mantener o disminuir la potencia del motor, y observar cómo cambia la altitud alcanzada.
 
 
 
@@ -113,7 +113,7 @@ Inicio
       Mostrar "Nueva altitud: ", altitud
 
       Si roc < 1 entonces
-          Mostrar "¡Advertencia! El avión casi no asciende."
+          Escribir "¡Advertencia! El avión no asciende lo suficiente."
       Fin Si
 
       Escribir "¿Desea cambiar la potencia?"
