@@ -136,5 +136,21 @@ Fin
 Función calcular_ROC(potencia, densidad):
     devolver (potencia * densidad) / 100
 
+
+
+| t (s) | Potencia (%) | Altitud antes (m) | Densidad | ROC (m/s) | Altitud después (m) | Decisión usuario | Comentario          |
+| ----- | ------------ | ----------------- | -------- | --------- | ------------------- | ---------------- | ------------------- |
+| 1     | 50           | 0                 | 1        | 1         | 1                   | Mantener         | Asciende            |
+| 2     | 50           | 1                 | 1        | 1         | 2                   | Aumentar         | —                   |
+| 3     | 60           | 2                 | 1        | 1         | 3                   | Mantener         | Asciende más rápido |
+| 4     | 60           | 3                 | 1        | 1         | 4                   | Disminuir        | —                   |
+| 5     | 50           | 4                 | 1        | 1         | 5                   | Mantener         | —                   |
+| 6     | 50           | 5                 | 1        | 1         | 6                   | Mantener         | —                   |
+| 7     | 50           | 6                 | 1        | 1         | 7                   | Aumentar         | —                   |
+| 8     | 60           | 7                 | 1        | 1         | 8                   | Mantener         | —                   |
+| 9     | 60           | 8                 | 1        | 1         | 9                   | Disminuir        | —                   |
+| 10    | 50           | 9                 | 1        | 1         | 10                  | Mantener         | —                   |
+
+
 ```
 #Uso de IA aplicado
