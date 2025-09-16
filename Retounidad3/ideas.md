@@ -136,6 +136,10 @@ Fin
 Función calcular_ROC(potencia, densidad):
     devolver (potencia * densidad) / 100
 
+```
+#Uso de IA aplicado
+
+
 
 
 | t (s) | Potencia (%) | Altitud antes (m) | Densidad | ROC (m/s) | Altitud después (m) | Decisión usuario | Comentario          |
@@ -152,5 +156,4 @@ Función calcular_ROC(potencia, densidad):
 | 10    | 50           | 9                 | 1        | 1         | 10                  | Mantener         | —                   |
 
 
-```
 #Uso de IA aplicado
