@@ -1,9 +1,3 @@
-# Primera idea 
-En el mantenimiento aeronáutico, los manuales se organizan según el ATA 100, que clasifica los sistemas de la aeronave en capítulos numerados.
-El programa debe permitir al usuario ingresar el número de un capítulo ATA y mostrar el sistema correspondiente.
-El usuario podrá realizar consultas múltiples dentro de esta opción, hasta que decida salir digitando un número especial (por ejemplo, 0).
-De esta manera, el programa ayudará al estudiante a familiarizarse con la clasificación ATA y la importancia de cada sistema en el avión.
-
 # Simulación de la velocidad de perdida
 El programa simulará el vuelo de una aeronave en el cual verificará en cada instante se la aeronave se encentra en condiciones seguras o si está entrando en perdida.
 El  usuario debe ingresar los parametros basicos de la aeronave: Peso total, superficie alar, coeficiente de sustentación máximo y la densidad del aire por la que se este volando.
@@ -157,3 +151,58 @@ Función calcular_ROC(potencia, densidad):
 
 
 #Uso de IA aplicado
+
+# Simulación angulo de ataque - lifting y drag
+
+El programa simulara 10 segundos de vuelo de una aeronave, el usuario podra aumentar o disminuir o mantener constante la velocidad. En cada segundo el drag, el lifting y el angulo de ascenso. Si el angulo de ascenso se vuelve negativo se debe alertar que el avion no puede seguir subiendo
+
+| Variable | Tipo de variable              | Comentario                                                                         |
+| -------- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| contador | De control (entero)           | Cuenta los segundos de simulación                                                  |
+| W        | Entrada (entero)              | Peso del avión                                                                     |
+| rho      | Entrada (entero)              | Densidad del aire                                                                  |
+| S        | Entrada (entero)              | Superficie alar                                                                    |
+| CL       | Entrada (entero)              | Coeficiente de sustentación                                                        |
+| CD       | Entrada (entero)              | Coeficiente de arrastre                                                            |
+| V        | Entrada/actualizable (entero) | Velocidad del avión, cambia según decisión del usuario                             |
+| L        | Cálculo (entero)              | Sustentación                                                                       |
+| D        | Cálculo (entero)              | Arrastre                                                                           |
+| theta    | Cálculo (entero aproximado)   | Ángulo de ascenso en grados                                                        |
+| decision | Condicional (entero)          | Indica si el usuario aumenta, disminuye, mantiene la velocidad o sale del programa |
+
+
+Inicio
+    Definir función calcular_angulo(rho, V, S, CL, CD, W):
+        L = (rho * V^2 * S * CL) // 2
+        D = (rho * V^2 * S * CD) // 2
+        relacion = (L - D) // W
+        theta = arctan(relacion) * (180 / pi)
+        Retornar theta
+
+    contador = 0
+    Leer W, rho, S, CL, CD, V
+
+    Mientras contador < 10 hacer:
+        theta = calcular_angulo(rho, V, S, CL, CD, W)
+        Escribir segundo actual, velocidad, ángulo
+
+        Si theta < 0 entonces
+            Mostrar " El avión no puede seguir ascendiendo"
+            Terminar bucle
+
+        Mostrar "Ingrese 1 para aumentar velocidad, 2 para disminuir, 3 para mantener, 0 para salir"
+        Leer decision
+
+        Si decision == 0 entonces
+            Mostrar " Saliendo de la simulación"
+            Terminar bucle
+        Sino si decision == 1 entonces
+            V = V + 10
+        Sino si decision == 2 entonces
+            V = V - 10
+        Sino si decision == 3 entonces
+            V = V (se mantiene igual)
+
+        contador = contador + 1
+    Fin mientras
+Fin
