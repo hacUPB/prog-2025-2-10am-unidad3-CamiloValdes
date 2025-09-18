@@ -58,7 +58,7 @@ while control == True:
                     case "2":
                         print("Simulación de ascenso del avión por 10 segundos")
                         print("El programa simulara durante 10 segundos de ascenso en los que el usuario decide si aumentar, mantener o disminuir la potencia del motor, y observar cómo cambia la altitud alcanzada.")
-                        import math
+                        import math                             #Uso de IA para el uso de la raiz cuadrada
                         def calcular_ROC(potencia, densidad):
                             return (potencia * densidad) // 100
                         potencia_inicial = int(input("Ingrese la potencia inicial: "))
@@ -69,7 +69,7 @@ while control == True:
                             print("Potencia actual:", potencia)
                             print("Altitud actual:", altitud)
                             densidad = int(1.225 * math.exp(-altitud / 10000))
-                            roc = calcular_ROC(potencia, densidad)
+                            roc = calcular_ROC(potencia, densidad)                        #Uso de IA
                             altitud = altitud + roc
                             print("Nueva altitud:", altitud)
                             if roc < 1:
@@ -103,13 +103,13 @@ while control == True:
                     case "2":
                         print("Simulación de angulo de ataque con relacion al drag y lifting")
                         print("El programa simulara 10 segundos de vuelo de una aeronave, el usuario podra aumentar o disminuir o mantener constante la velocidad. En cada segundo el drag, el lifting y el angulo de ascenso. Si el angulo de ascenso se vuelve negativo se debe alertar que el avion no puede seguir subiendo")
-                        import math
+                        import math                                #Uso de IA para el uso de degrees
                         def calcular_angulo(rho, V, S, CL, CD, W):
                             L = (rho * (V ** 2) * S * CL) // 2
                             D = (rho * (V ** 2) * S * CD) // 2
                             relacion = (L - D) // W
                             theta = int(math.degrees(math.atan(relacion)))
-                            return theta
+                            return theta            #Uso de IA
 
                         print(" Simulación del Ángulo de Ascenso")
 
@@ -156,3 +156,5 @@ while control == True:
             break
         case _:
             print("modo no valido")
+
+#Uso de IA en el programa 
