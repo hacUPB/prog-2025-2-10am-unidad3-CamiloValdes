@@ -15,6 +15,7 @@ while control == True:
                     case "1":
                         print("Que es")
                         print("fenómeno aerodinámico donde el ala de un avión pierde sustentación porque el ángulo de ataque excede un límite crítico, haciendo que el flujo de aire sobre el ala se vuelva turbulento. Esto resulta en una pérdida de control y una rápida caída de altura. La recuperación implica disminuir el ángulo de ataque y aumentar la velocidad, generalmente bajando el morro del avión y añadiendo potencia. ")
+                        break
                     case "2":
                         print("Simulacion stall")
                         print("El programa simulará el vuelo de una aeronave en el cual verificará en cada instante si la aeronave se encentra en condiciones seguras o si está entrando en perdida.")
@@ -55,6 +56,7 @@ while control == True:
                     case "1":
                         print("Que es")
                         print("Cuando un avión asciende, la densidad del aire disminuye y, por tanto, la potencia disponible del motor también se reduce. Esto afecta directamente la capacidad del avión para seguir ganando altitud.")
+                        break
                     case "2":
                         print("Simulación de ascenso del avión por 10 segundos")
                         print("El programa simulara durante 10 segundos de ascenso en los que el usuario decide si aumentar, mantener o disminuir la potencia del motor, y observar cómo cambia la altitud alcanzada.")
@@ -100,6 +102,7 @@ while control == True:
                     case "1":
                         print("Qué es")
                         print("El ángulo de ascenso es la inclinación de la trayectoria de vuelo con respecto a la horizontal. Este ángulo de ascenso está directamente relacionado con la sustentación y el arrastre, ya que el lift es la fuerza que mantiene el avión en el aire y el drag es la resistencia que se opone al movimiento. En general, aumentar el ángulo de ataque (el ángulo entre el ala y la corriente de aire) incrementa tanto la sustentación como el arrastre, aunque el arrastre aumenta más rápidamente y puede llevar a una pérdida de sustentación. Para un ascenso eficiente, la aeronave debe generar la sustentación suficiente para superar su peso y el arrastre, manteniendo un equilibrio")
+                        break
                     case "2":
                         print("Simulación de angulo de ataque con relacion al drag y lifting")
                         print("El programa simulara 10 segundos de vuelo de una aeronave, el usuario podra aumentar o disminuir o mantener constante la velocidad. En cada segundo el drag, el lifting y el angulo de ascenso. Si el angulo de ascenso se vuelve negativo se debe alertar que el avion no puede seguir subiendo")
